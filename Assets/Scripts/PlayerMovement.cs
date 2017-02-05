@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour {
     // Is player carrying object?
     public bool holdingTrash;
     public bool holdingRecycling;
+    public bool holdingCompost;
+    public bool holdingObject;
 
     // Initializes game
     void Start() {
@@ -35,6 +37,8 @@ public class PlayerMovement : MonoBehaviour {
         // initialization
         holdingTrash = false;
         holdingRecycling = false;
+        holdingCompost = false;
+        holdingObject = false;
         speed = 6;
 
     }
@@ -67,10 +71,10 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     // Activates when player collides with a trigger
-    // TODO: Write separate methods for each pickup and bin, or figure out how to combine
+    // TODO: Generalize with arrays
     void OnTriggerEnter2D(Collider2D coll) {
         // Is collider object?
-        if (coll.name.StartsWith("Pickup")) {
+        if (!holdingObject && coll.name.StartsWith("Pickup")) {
             // If not already holding trash, "picks up" object,
             // and marks player as holding trash
             // TODO: Redundant?
@@ -80,19 +84,31 @@ public class PlayerMovement : MonoBehaviour {
             } else if (!holdingRecycling && coll.name.StartsWith("PickupRecycling")) {
                 holdingRecycling = true;
                 Destroy(coll.gameObject);
+            } else if (!holdingCompost && coll.name.StartsWith("PickupCompost")) {
+                holdingCompost = true;
+                Destroy(coll.gameObject);
             }
+            holdingObject = true;
         }
+
         // Is collider a bin?
-        if (coll.name.StartsWith("Bin")) {
+        if (holdingObject && coll.name.StartsWith("Bin")) {
             // If holding object, increments score, and
             // marks player as not holding object
             if (holdingTrash && coll.name.StartsWith("BinTrash")) {
                 scoreValue = scoreValue + 1;
                 holdingTrash = false;
+                holdingObject = false;
                 setScoreText();
             } else if (holdingRecycling && coll.name.StartsWith("BinRecycling")) {
                 scoreValue = scoreValue + 1;
                 holdingRecycling = false;
+                holdingObject = false;
+                setScoreText();
+            } else if (holdingCompost && coll.name.StartsWith("BinCompost")) {
+                scoreValue = scoreValue + 1;
+                holdingCompost = false;
+                holdingObject = false;
                 setScoreText();
             }
         }
