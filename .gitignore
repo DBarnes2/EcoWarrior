@@ -44,3 +44,7 @@ sysinfo.txt
 ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
+
+#Computer specific files
+ProjectVersion.txt
+UnityConnectSettings.asset
