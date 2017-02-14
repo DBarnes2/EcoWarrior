@@ -3,14 +3,19 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
+
+    public Rigidbody2D rigid;
     // Movement Keys (customizable)
+
+
     public KeyCode upKey;
     public KeyCode downKey;
     public KeyCode rightKey;
     public KeyCode leftKey;
 
-    // Movement Speed
+    // Movement
     public float speed;
+    Vector2 direction;
 
     // Score Text
     public Text scoreText;
@@ -21,10 +26,12 @@ public class PlayerMovement : MonoBehaviour {
     public float timerValue;
 
     // Is player carrying object?
+    // CHANGE TO INT
     public bool holdingTrash;
     public bool holdingRecycling;
     public bool holdingCompost;
     public bool holdingObject;
+
 
     // Initializes game
     void Start() {
@@ -39,24 +46,26 @@ public class PlayerMovement : MonoBehaviour {
         holdingRecycling = false;
         holdingCompost = false;
         holdingObject = false;
-        speed = 6;
+        rigid = this.GetComponent<Rigidbody2D>();
+        // move
+        direction = Vector2.up * speed;
 
     }
 
     // FixedUpdate is called regularly
     // TODO: make more responsive
-    void FixedUpdate() {
-        // Move in a new Direction?
-        if (Input.GetKey(upKey)) {
-            GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
-        } else if (Input.GetKey(downKey)) {
-            GetComponent<Rigidbody2D>().velocity = -Vector2.up * speed;
-        } else if (Input.GetKey(rightKey)) {
-            GetComponent<Rigidbody2D>().velocity = Vector2.right * speed;
-        } else if (Input.GetKey(leftKey)) {
-            GetComponent<Rigidbody2D>().velocity = -Vector2.right * speed;
-        }
-    }
+    //void FixedUpdate() {
+    //    // Move in a new Direction?
+    //    if (Input.GetKey(upKey)) {
+    //        GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
+    //    } else if (Input.GetKey(downKey)) {
+    //        GetComponent<Rigidbody2D>().velocity = -Vector2.up * speed;
+    //    } else if (Input.GetKey(rightKey)) {
+    //        GetComponent<Rigidbody2D>().velocity = Vector2.right * speed;
+    //    } else if (Input.GetKey(leftKey)) {
+    //        GetComponent<Rigidbody2D>().velocity = -Vector2.right * speed;
+    //    }
+    //}
 
     // Once per frame
     void Update() {
@@ -66,8 +75,21 @@ public class PlayerMovement : MonoBehaviour {
 
         // Is game over?
         if (timerValue < 0) {
-            gameOver();
+            timerValue = 0;
         }
+        
+        // movement
+        // Move in a new Direction?
+        if (Input.GetKey(upKey)) {
+            direction = Vector2.up * speed;
+        } else if (Input.GetKey(downKey)) {
+            direction = -Vector2.up * speed;
+        } else if (Input.GetKey(rightKey)) {
+            direction = Vector2.right * speed;
+        } else if (Input.GetKey(leftKey)) {
+            direction = -Vector2.right * speed;
+        }
+        rigid.velocity = direction;
     }
 
     // Activates when player collides with a trigger
@@ -124,11 +146,4 @@ public class PlayerMovement : MonoBehaviour {
         timerText.text = "Timer: " + Mathf.RoundToInt(timerValue).ToString();
     }
 
-    // Is called if the game is over. 
-    // Sets the time to 0 and stops the player
-    // TODO: Object melt into ground?
-    void gameOver() {
-        timerValue = 0;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-    }
 }
