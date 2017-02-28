@@ -1302,21 +1302,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77c785a0c624c74f9cef310b7273e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickupCompostUtensilsPrefab: {fileID: 1000013004841626, guid: 0681fb9dcacd3e94fa29db390ffd140b,
-    type: 2}
-  PickupRecyclingColaPrefab: {fileID: 1000010126848934, guid: 2a99c840d0396844e847cf16abd402cd,
-    type: 2}
-  PickupToxicBatteryPrefab: {fileID: 1000010311119532, guid: 9360bb1ef0b2ce7409104f5b01110a7a,
-    type: 2}
-  PickupTrashStyrofoamPrefab: {fileID: 1000012184008030, guid: 24aa3e407bb529243a7e5a3303051f1c,
-    type: 2}
-  PickupRecylingWaterBottle: {fileID: 1000012884470080, guid: 9fe68da42f2012447b5476a366e3b780,
-    type: 2}
-  numPickups: 4
-  TopBorder: {fileID: 698884668}
-  BottomBorder: {fileID: 1472754803}
-  LeftBorder: {fileID: 671573988}
-  RightBorder: {fileID: 614653683}
+  compost:
+  - {fileID: 1000013004841626, guid: 0681fb9dcacd3e94fa29db390ffd140b, type: 2}
+  trash:
+  - {fileID: 1000012184008030, guid: 24aa3e407bb529243a7e5a3303051f1c, type: 2}
+  recycling:
+  - {fileID: 1000012884470080, guid: 9fe68da42f2012447b5476a366e3b780, type: 2}
+  - {fileID: 1000010126848934, guid: 2a99c840d0396844e847cf16abd402cd, type: 2}
+  toxic:
+  - {fileID: 1000010311119532, guid: 9360bb1ef0b2ce7409104f5b01110a7a, type: 2}
+  topBorder: {fileID: 698884668}
+  bottomBorder: {fileID: 1472754803}
+  leftBorder: {fileID: 671573988}
+  rightBorder: {fileID: 614653683}
 --- !u!1 &1888929323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,11 +1453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f38b99b756c694da93b8eb01375d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
   upKey: 273
   downKey: 274
   rightKey: 275
   leftKey: 276
-  speed: 6
+  speed: 10
   scoreText: {fileID: 1349964718}
   scoreValue: 0
   timerText: {fileID: 10632249}
