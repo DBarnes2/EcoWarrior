@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 586183553}
   - component: {fileID: 586183552}
   - component: {fileID: 586183551}
+  - component: {fileID: 586183554}
   m_Layer: 0
   m_Name: BinRecycling
   m_TagString: Untagged
@@ -330,6 +331,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &586183554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586183550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6aa5059e461ca2429acee291a85390e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wasteType: 
+  playerScript: {fileID: 0}
 --- !u!1 &606597836
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +432,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 606597836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc938e96ca021cb458704f38da8f156f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e98c16664ce8a240974d52c291abd9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wasteType: 
@@ -1102,6 +1116,7 @@ GameObject:
   - component: {fileID: 1496710594}
   - component: {fileID: 1496710593}
   - component: {fileID: 1496710592}
+  - component: {fileID: 1496710595}
   m_Layer: 0
   m_Name: BinCompost
   m_TagString: Untagged
@@ -1171,6 +1186,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1496710595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496710591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5952e0b298c2a34287c62be8e5be5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wasteType: 
+  playerScript: {fileID: 0}
 --- !u!1 &1534875362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,9 +1526,6 @@ MonoBehaviour:
   scoreValue: 0
   timerText: {fileID: 10632249}
   timerValue: 30
-  holdingTrash: 0
-  holdingRecycling: 0
-  holdingCompost: 0
 --- !u!50 &1969538549
 Rigidbody2D:
   serializedVersion: 4
