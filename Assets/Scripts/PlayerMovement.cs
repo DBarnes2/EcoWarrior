@@ -31,14 +31,11 @@ public class PlayerMovement : MonoBehaviour {
 
     // Initializes game
     void Start() {
-        scoreValue = 0;
         setScoreText();
-        timerValue = 30;
         setTimerText();
 
         rigid = this.GetComponent<Rigidbody2D>();
         direction = Vector2.up * speed;
-        speed = 6;
         wasteType = "";
     }
 
