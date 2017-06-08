@@ -7,25 +7,46 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/2dCharacter.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/AircraftJet2Axis.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/AircraftJetAI.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/AircraftPropeller4Axis.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/AircraftPropellerAI.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/Car.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/CarAIWaypointBased.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/CharacterFirstPerson.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/CharacterThirdPerson.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/CharacterThirdPersonAI.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/Particles.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Imported Assets/SampleScenes/Scenes/RollerBall.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/_Scenes/EcoWarrior.unity
+    guid: 6c125c5fa1c69c34fb841c2b3a816929
+  - enabled: 1
+    path: Assets/_Scenes/EcoWarriorLevel2.unity
+    guid: 80fda023b80f09b429ac781f349efb62
+  - enabled: 1
+    path: Assets/_Scenes/EcoWarriorLevel3.unity
+    guid: 2e44498d8ef6dad44862e4dc6fde0e60

@@ -4,9 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - CompostPickup
+  - TrashPickup
+  - RecyclingPickup
+  - ToxicPickup
+  - Bin
+  - Player
   - Compost
-  - Trash
   - Recycling
+  - Trash
   - Toxic
   layers:
   - Default
@@ -17,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Bin
   - 
   - 
   - 
